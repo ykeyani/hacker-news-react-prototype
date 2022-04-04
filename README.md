@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Hacker News React Prototype
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project uses the [hacker news API](https://github.com/HackerNews/API) to provide a react based frontend while maintaining a similar style to the original site.
 
 ## Available Scripts
 

@@ -1,0 +1,137 @@
+html, body {
+  color: $color-text;
+  font-size: $base-size;
+  background-color: $color-white;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+h1 {
+  font-weight: bold;
+}
+
+%subtle-text {
+  color: $color-subtle;
+  font-size: $text-subtle-size;
+}
+
+.App>header {
+  background-color: $color-theme;
+  padding: $base-space $base-space $base-space $indent-size+$base-space*3;
+  margin: 0 0 $base-space*2 0;
+}
+
+.news-list {
+
+  &>article {
+    background-color: $color-off-white;
+    padding: $base-space $base-space/2;
+    margin: $base-space;
+    border-radius: $base-corner;
+
+    &>summary {
+      padding: 0;
+      .summary-title {
+        font-size: $text-heading-size;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+
+        span {
+          padding: 0 $base-space/2;
+          display: inline-block;
+        }
+
+        .index {
+          color: $color-subtle;
+          width: $index-size;
+          font-size: $text-index-size;
+          align-self: flex-start;
+        }
+
+        .title {
+          color: $color-text;
+
+        }
+
+        .link {
+          color: $color-subtle;
+          font-size: $text-body-size;
+        }
+
+      }
+
+      .summary-text {
+        margin: $base-space;
+        padding-left: $indent-size;
+        @extend %subtle-text;
+
+        .comments-link {
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.meta-item {
+  margin: 0 $base-space;
+  padding: 0;
+  display: inline-block;
+
+  &>p {
+    @extend %subtle-text;
+    margin: 0;
+    color: $color-theme;
+    font-weight: normal;
+    cursor: help;
+    &:hover {
+      font-weight: bold;
+    }
+  }
+
+  &>div {
+    visibility: hidden;
+    z-index: 999;
+    position: absolute;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    background-color: $color-white;
+    border: 1px solid $color-subtle;
+    &>span {
+      padding: $base-space/4 $base-space/2;
+      margin: $base-space/4;
+      border-radius: $base-corner;
+      background-color: $color-off-white;
+    }
+  }
+
+  &:hover>div {
+    visibility: visible;
+  }
+}
+
+.news-item {
+  margin: $base-space $base-space $base-space $indent-size;
+}
+
+.comment {
+  margin: $base-space $base-space $base-space $base-space*4;
+  &>span {
+    @extend %subtle-text;
+  }
+}
+
+.error {
+  font-size: $text-body-size;
+  font-weight: bold;
+  color: red;
+  text-align: center;
+}
